@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Landing Page</title>
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+
+  fbq('init', 'YOUR_PIXEL_ID');  // Replace with your Pixel ID
+  fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=1992106591615926PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
+</head>
+<body>
+  <h1>Welcome to My Landing Page</h1>
+
+  <!-- Example: Registration Form -->
+  <form id="signupForm">
+    <input type="text" placeholder="Name" required>
+    <input type="email" placeholder="Email" required>
+    <button type="submit">Register</button>
+  </form>
+
+  <script>
+    // Track CompleteRegistration when form submits
+    document.getElementById('signupForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // Stop form from refreshing
+      fbq('track', 'CompleteRegistration');
+      alert('Thank you! Your registration is tracked.');
+    });
+  </script>
+</body>
+</html>
